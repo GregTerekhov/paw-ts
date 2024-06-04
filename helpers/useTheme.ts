@@ -1,27 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+
+import { Themes } from 'types';
+import { useLocalStorage } from './useLocalStorage';
 
 export const useTheme = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [theme, setTheme] = useLocalStorage<Themes.Light | Themes.Dark>({
+    key: 'theme',
+    initialValue: Themes.Light,
+  });
+
+  const isDark = theme === Themes.Dark;
 
   useEffect(() => {
     if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      theme === Themes.Dark ||
+      (!('theme' in localStorage) &&
+        window.matchMedia(`(prefers-color-scheme: ${Themes.Dark})`).matches)
     ) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add(Themes.Dark);
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove(Themes.Dark);
     }
-  }, [isDark]);
+  }, [theme]);
 
   const handleSwitchTheme = () => {
-    setIsDark(!isDark);
-
-    if (isDark) {
-      localStorage.theme = 'dark';
-    } else {
-      localStorage.theme = 'light';
-    }
+    const newTheme = isDark ? Themes.Light : Themes.Dark;
+    setTheme(newTheme);
   };
 
   return { isDark, handleSwitchTheme };

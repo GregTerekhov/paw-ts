@@ -1,10 +1,7 @@
-import Image from 'next/image';
-
-import { IconSizes } from 'types';
+import { IconName, IconSizes } from 'types';
 
 import { VotingPictures } from 'components';
-
-import favourite from '../../../public/favourite.svg';
+import { SvgIcon } from 'ui';
 
 export default function VotingPage() {
   return (
@@ -12,7 +9,7 @@ export default function VotingPage() {
       <div className='relative mb-11 h-[166px] w-full rounded-[20px] bg-whiteBase-darker md:mb-[53px] md:h-[376px] lg:mb-[52px] lg:h-[360px] dark:bg-whiteBase/5'>
         <VotingPictures />
       </div>
-      <ul className='max-h-votingSm md:max-h-votingMd lg:max-h-votingLg space-y-2.5 overflow-auto'>
+      <ul className='max-h-votingSm space-y-2.5 overflow-auto md:max-h-votingMd lg:max-h-votingLg'>
         <li className='rounded-[10px] bg-whiteBase-darker p-[15px] dark:bg-whiteBase/5'>
           <div className='flex justify-between max-md:mb-2.5'>
             <div className='flex items-center md:gap-x-5'>
@@ -24,12 +21,10 @@ export default function VotingPage() {
                 was added to ...
               </p>
             </div>
-            <Image
-              src={favourite}
-              unoptimized
-              alt='Trigger for adding photo to page'
-              width={IconSizes.LG}
-              height={IconSizes.LG}
+            <SvgIcon
+              id={IconName.Favourite}
+              size={{ width: IconSizes.LG, height: IconSizes.LG }}
+              className='fill-accentBase'
             />
           </div>
           <p className='hidden leading-6 text-secondaryText max-md:block'>
@@ -48,12 +43,10 @@ export default function VotingPage() {
                 was added to ...
               </p>
             </div>
-            <Image
-              src={favourite}
-              unoptimized
-              alt='Trigger for adding photo to page'
-              width={IconSizes.LG}
-              height={IconSizes.LG}
+            <SvgIcon
+              id={IconName.Favourite}
+              size={{ width: IconSizes.LG, height: IconSizes.LG }}
+              className='fill-accentBase'
             />
           </div>
           <p className='hidden leading-6 text-secondaryText max-md:block'>
@@ -72,12 +65,10 @@ export default function VotingPage() {
                 was added to ...
               </p>
             </div>
-            <Image
-              src={favourite}
-              unoptimized
-              alt='Trigger for adding photo to page'
-              width={IconSizes.LG}
-              height={IconSizes.LG}
+            <SvgIcon
+              id={IconName.Favourite}
+              size={{ width: IconSizes.LG, height: IconSizes.LG }}
+              className='fill-accentBase'
             />
           </div>
           <p className='hidden leading-6 text-secondaryText max-md:block'>

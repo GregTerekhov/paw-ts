@@ -1,26 +1,19 @@
 'use client';
 
 import { MouseEventHandler } from 'react';
-import Image from 'next/image';
 
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-import { ButtonType, ButtonVariant, IconSizes } from 'types';
-
-interface Sizes {
-  width?: IconSizes;
-  height?: IconSizes;
-}
+import { ButtonType, ButtonVariant, IconName, Sizes } from 'types';
+import SvgIcon from './svg-icon';
 
 interface IPrimaryButtonProps {
   variant: ButtonVariant;
   onHandleClick?: MouseEventHandler<HTMLButtonElement>;
   type?: ButtonType;
   label?: string;
-  iconSrc?: StaticImport;
-  iconAlt?: string;
+  iconSrc?: IconName;
   classNameButton?: string;
   sizes?: Sizes;
-  iconClass?: { rotate: string };
+  iconClass?: string;
 }
 
 export default function PrimaryButton({
@@ -28,7 +21,6 @@ export default function PrimaryButton({
   onHandleClick,
   label,
   iconSrc,
-  iconAlt,
   sizes,
   classNameButton,
   iconClass,
@@ -40,14 +32,11 @@ export default function PrimaryButton({
       className={`${classNameButton} items-center justify-center`}
       onClick={onHandleClick}
     >
-      {iconSrc && iconAlt && sizes && (
-        <Image
-          src={iconSrc}
-          unoptimized
-          alt={iconAlt}
-          width={sizes.width}
-          height={sizes.height}
-          style={iconClass}
+      {iconSrc && sizes && iconClass && (
+        <SvgIcon
+          id={iconSrc}
+          size={sizes}
+          className={iconClass}
         />
       )}
       {label && label}
