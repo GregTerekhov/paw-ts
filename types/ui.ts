@@ -22,3 +22,26 @@ export enum IconSizes {
   '6XL' = 100,
   '7XL' = 200,
 }
+
+export type Sizes = {
+  width: IconSizes;
+  height: IconSizes;
+};
+
+export enum IconName {
+  Arrow = 'arrow',
+  Ascending = 'ascending',
+  Burger = 'burger',
+  Close = 'close',
+  Descending = 'descending',
+  Dislike = 'dislike',
+  Eye = 'eye',
+  Favourite = 'favourite',
+  Like = 'like',
+  Logo = 'logo',
+  NoImage = 'no-image',
+  Reload = 'reload',
+  Search = 'search',
+  SleepingEye = 'sleeping-eye',
+  Upload = 'upload',
+}

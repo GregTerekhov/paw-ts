@@ -1,9 +1,8 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
-import { IconSizes } from 'types';
+import { IconName, IconSizes } from 'types';
 
-import logo from '../public/catsPaw.svg';
+import { SvgIcon } from 'ui';
 
 export default function Logo() {
   return (
@@ -11,13 +10,10 @@ export default function Logo() {
       href='/'
       className='flex gap-x-2'
     >
-      <Image
-        src={logo}
-        unoptimized
-        width={IconSizes['2XL']}
-        height={IconSizes['2XL']}
-        alt='logo'
-        priority
+      <SvgIcon
+        id={IconName.Logo}
+        size={{ width: IconSizes.LG, height: IconSizes.LG }}
+        className='fill-accentBase'
       />
       PetsPaw
     </Link>

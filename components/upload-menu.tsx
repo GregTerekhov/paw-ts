@@ -1,8 +1,6 @@
-import Image from 'next/image';
+import { ButtonType, IconName, IconSizes } from 'types';
 
-import { ButtonType, IconSizes } from 'types';
-
-import noPic from '../public/no-image.svg';
+import { SvgIcon } from 'ui';
 
 export default function UploadMenu() {
   return (
@@ -36,13 +34,10 @@ export default function UploadMenu() {
             accept='image/png, image/jpg, image/webp, image/bmp, image/gif, image/tiff'
             className='absolute h-full w-full rounded-[20px] border-2 border-dashed border-accentBase-light bg-whiteBase'
           />
-          <Image
-            src={noPic}
-            unoptimized
-            alt='No picture icon'
-            width={IconSizes['7XL']}
-            height={IconSizes['7XL']}
-            className='absolute opacity-10'
+          <SvgIcon
+            id={IconName.NoImage}
+            size={{ width: IconSizes['7XL'], height: IconSizes['7XL'] }}
+            className='absolute z-10 fill-whiteBase-darker dark:fill-whiteBase/5'
           />
           <button
             type={ButtonType.Submit}
