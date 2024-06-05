@@ -76,9 +76,10 @@ const config: Config = {
         breedsSm: 'calc(100vh - 370px)',
         gallerySm: 'calc(100vh - 662px)',
         votingMd: 'calc(100vh - 690px)',
-        breedsMd: 'calc(100vh - 230px)',
+        breedsMd: 'calc(100vh - 240px)',
         galleryMd: 'calc(100vh - 416px)',
         votingLg: 'calc(100vh - 662px)',
+        modalUpload: 'calc(100vh - 60px)',
       },
       maxWidth: {
         gridItem: 'calc(100% - 20px)',

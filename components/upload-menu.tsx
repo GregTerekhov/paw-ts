@@ -1,4 +1,4 @@
-import { ButtonType, IconName, IconSizes } from 'types';
+import { IconName, IconSizes } from 'types';
 
 import { SvgIcon } from 'ui';
 
@@ -32,20 +32,16 @@ export default function UploadMenu() {
             id='upload'
             name='upload'
             accept='image/png, image/jpg, image/webp, image/bmp, image/gif, image/tiff'
-            className='absolute h-full w-full rounded-[20px] border-2 border-dashed border-accentBase-light bg-whiteBase'
+            className='absolute h-full w-full cursor-pointer rounded-[20px] border-2 border-dashed border-accentBase-light bg-whiteBase text-transparent file:hidden dark:border-accentBase/20 dark:bg-whiteBase/5'
           />
           <SvgIcon
             id={IconName.NoImage}
             size={{ width: IconSizes['7XL'], height: IconSizes['7XL'] }}
             className='absolute z-10 fill-whiteBase-darker dark:fill-whiteBase/5'
           />
-          <button
-            type={ButtonType.Submit}
-            className='absolute rounded-[20px] border-2 border-dashed border-accentBase-light bg-whiteBase'
-          ></button>
+          <span className='relative top-56 text-secondaryText'>No file selected</span>
         </label>
       </form>
-      <p className='text-center text-medium leading-[30px] text-secondaryText'> No file selected</p>
     </>
   );
 }

@@ -2,9 +2,9 @@ export default function DetailsPage({ params }: { params: { slug: string } }) {
   return (
     <section>
       <h1>{`Details: ${params.slug}`}</h1>
-      <div className='bg-whiteBase-darker mb-[50px] h-[166px] w-full rounded-[20px] md:h-[376px] lg:h-[370px] dark:bg-whiteBase/5'></div>
+      <div className='mb-[50px] h-[166px] w-full rounded-[20px] bg-whiteBase-darker md:h-[376px] lg:h-[370px] dark:bg-whiteBase/5'></div>
       <div className='relative rounded-[20px] border-2 border-solid border-accentBase-light px-5 pb-3.5 pt-5 md:px-10 md:pb-10 md:pt-[26px] dark:border-accentBase/20'>
-        <h1 className='absolute -top-8 left-1/2 -translate-x-1/2 rounded-[20px] bg-whiteBase px-5 py-4 text-center text-medium font-medium md:px-10 md:py-[5px] md:text-lg'>
+        <h1 className='absolute -top-8 left-1/2 -translate-x-1/2 rounded-[20px] bg-whiteBase px-5 py-4 text-center text-medium font-medium md:px-10 md:py-[5px] md:text-lg dark:bg-darkBase-foreground'>
           Name
         </h1>
         <h2 className='relative z-10 mb-5 text-center font-medium text-secondaryText md:text-medium'>

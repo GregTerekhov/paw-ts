@@ -2,11 +2,9 @@
 
 import { useRouter } from 'next/navigation';
 
-import { ButtonVariant, IconSizes } from 'types';
+import { ButtonVariant, IconName, IconSizes } from 'types';
 
 import { PrimaryButton } from 'ui';
-
-import arrow from '../../public/arrow.svg';
 
 export default function ReturnButton() {
   const router = useRouter();
@@ -19,11 +17,10 @@ export default function ReturnButton() {
     <PrimaryButton
       variant={ButtonVariant.Iconic}
       onHandleClick={handleGoBack}
-      iconSrc={arrow}
-      iconAlt='Return button'
-      classNameButton='flex h-10 w-10 rounded-[10px] bg-accentBase-light dark:bg-accentBase/20'
+      iconSrc={IconName.Arrow}
+      classNameButton='flex group h-10 w-10 rounded-[10px] bg-accentBase-light dark:bg-accentBase/20 hover:bg-accentBase'
       sizes={{ width: IconSizes.LG, height: IconSizes.LG }}
-      iconClass={{ rotate: '90deg' }}
+      iconClass='rotate-90 fill-accentBase group-hover:fill-whiteBase'
     />
   );
 }

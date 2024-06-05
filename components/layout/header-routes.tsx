@@ -1,60 +1,63 @@
+'use client';
+
 import Link from 'next/link';
-import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 import { UrlObject } from 'url';
-import { IconSizes, PathLabel, Paths } from 'types';
+import { IconName, IconSizes, PathLabel, Paths } from 'types';
 
-import like from '../../public/like.svg';
-import favourite from '../../public/favourite.svg';
-import dislike from '../../public/dislike.svg';
+import SvgIcon from 'ui/svg-icon';
 
 interface HeaderLinks {
   path: UrlObject;
   label: PathLabel;
-  iconSrc: string | StaticImport;
+  iconSrc: IconName;
   height?: IconSizes;
 }
 
 export default function HeaderRoutes() {
+  const pathname = usePathname();
+
   const headerLinks: HeaderLinks[] = [
     {
       path: { pathname: Paths.Likes },
       label: PathLabel.Likes,
-      iconSrc: like,
+      iconSrc: IconName.Like,
     },
     {
       path: { pathname: Paths.Favourites },
       label: PathLabel.Favourites,
-      iconSrc: favourite,
+      iconSrc: IconName.Favourite,
       height: IconSizes['4XL'],
     },
     {
       path: { pathname: Paths.Dislikes },
       label: PathLabel.Dislikes,
-      iconSrc: dislike,
+      iconSrc: IconName.Dislike,
     },
   ];
 
   return (
     <ul className='flex gap-x-2.5'>
       {Array.isArray(headerLinks) &&
-        headerLinks.map(({ path, label, iconSrc, height = IconSizes['5XL'] }) => (
-          <li key={label}>
-            <Link
-              href={path}
-              className='flex h-[60px] w-[60px] items-center justify-center rounded-[20px] bg-whiteBase hover:bg-accentBase-light dark:bg-whiteBase/5'
-            >
-              <Image
-                src={iconSrc}
-                unoptimized
-                alt={`Link to ${label} page`}
-                width={IconSizes['5XL']}
-                height={height}
-              />
-            </Link>
-          </li>
-        ))}
+        headerLinks.map(({ path, label, iconSrc, height = IconSizes['5XL'] }) => {
+          const isActive = pathname === path.pathname;
+
+          return (
+            <li key={label}>
+              <Link
+                href={path}
+                className={`${isActive ? 'bg-accentBase' : 'bg-whiteBase dark:bg-whiteBase/5'} group flex h-[60px] w-[60px] items-center justify-center rounded-[20px]  hover:bg-accentBase-light dark:hover:bg-accentBase`}
+              >
+                <SvgIcon
+                  id={iconSrc}
+                  size={{ width: IconSizes['5XL'], height }}
+                  className={`${isActive ? 'fill-whiteBase' : 'fill-accentBase'}  group-hover:fill-accentBase dark:group-hover:fill-whiteBase`}
+                />
+              </Link>
+            </li>
+          );
+        })}
     </ul>
   );
 }

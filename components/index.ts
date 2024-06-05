@@ -2,6 +2,7 @@ export { default as BreedsFiltering } from './breeds/breeds-filtering';
 export { default as Carousel } from './carousel';
 export { default as Container } from './layout/container';
 export { default as GalleryFiltering } from './gallery/gallery-filtering';
+export { default as GridList } from './grid-list';
 export { default as Header } from './layout/header';
 export { default as HeaderRoutes } from './layout/header-routes';
 export { default as Image } from './image';
