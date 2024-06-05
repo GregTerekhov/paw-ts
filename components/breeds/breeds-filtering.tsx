@@ -23,7 +23,7 @@ export default function BreedsFiltering() {
     <div className='max-md:mb-2.5 max-md:space-y-2.5 md:flex md:flex-1 md:gap-x-2.5'>
       <button
         type={ButtonType.Button}
-        className='flex items-center justify-between rounded-[10px] bg-whiteBase-darker px-2.5 py-2 text-secondaryText max-md:w-full md:w-[230px] lg:w-[226px] dark:bg-whiteBase/5'
+        className='flex items-center justify-between rounded-[10px] border border-solid border-transparent bg-whiteBase-darker px-2.5 py-2 text-secondaryText hover:border-accentBase-light max-md:w-full md:w-[230px] lg:w-[226px] dark:bg-whiteBase/5 dark:hover:border-accentBase/20'
       >
         All breeds
         <SvgIcon
@@ -35,7 +35,7 @@ export default function BreedsFiltering() {
       <div className='flex gap-x-2.5'>
         <button
           type={ButtonType.Button}
-          className='flex items-center justify-between rounded-[10px] bg-whiteBase-darker px-2.5 py-2 text-secondaryText max-md:w-full md:w-[124px] lg:w-[101px] dark:bg-whiteBase/5'
+          className='flex items-center justify-between rounded-[10px] border border-solid border-transparent bg-whiteBase-darker px-2.5 py-2 text-secondaryText hover:border-accentBase-light max-md:w-full md:w-[124px] lg:w-[101px] dark:bg-whiteBase/5 dark:hover:border-accentBase/20'
         >
           Limit: 10
           <SvgIcon
@@ -55,7 +55,8 @@ export default function BreedsFiltering() {
                 // onHandleClick={}
                 iconSrc={iconSrc}
                 sizes={{ width: IconSizes.SM, height: IconSizes.XL }}
-                classNameButton='bg-whiteBase-darker flex h-10 w-10 rounded-[10px] text-secondaryText dark:bg-whiteBase/5'
+                classNameButton='bg-whiteBase-darker border border-solid border-transparent hover:border-accentBase-light dark:hover:border-accentBase/20 group flex h-10 w-10 rounded-[10px] text-secondaryText dark:bg-whiteBase/5'
+                iconClass='fill-secondaryText group-hover:fill-accentBase'
               />
             </div>
           ))}

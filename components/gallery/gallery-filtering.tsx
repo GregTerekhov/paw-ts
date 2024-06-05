@@ -36,7 +36,7 @@ export default function GalleryFiltering() {
             </span>
             <button
               type={ButtonType.Button}
-              className='flex w-full items-center justify-between rounded-[10px] bg-whiteBase px-2.5 py-2 text-darkBase dark:bg-darkBase dark:text-whiteBase'
+              className='flex w-full items-center justify-between rounded-[10px] border border-solid border-transparent bg-whiteBase px-2.5 py-2 text-darkBase hover:border-accentBase-light dark:bg-darkBase dark:text-whiteBase dark:hover:border-accentBase/20'
             >
               {value}
               <SvgIcon
@@ -54,7 +54,7 @@ export default function GalleryFiltering() {
           </span>
           <button
             type={ButtonType.Button}
-            className='flex w-full items-center justify-between rounded-[10px] bg-whiteBase px-2.5 py-2 text-darkBase dark:bg-darkBase dark:text-whiteBase'
+            className='flex w-full items-center justify-between rounded-[10px] border border-solid border-transparent bg-whiteBase px-2.5 py-2 text-darkBase hover:border-accentBase-light dark:bg-darkBase dark:text-whiteBase dark:hover:border-accentBase/20'
           >
             5 items per page
             <SvgIcon
@@ -69,9 +69,9 @@ export default function GalleryFiltering() {
             variant={ButtonVariant.Iconic}
             // onHandleClick={}
             iconSrc={IconName.Reload}
-            iconClass='fill-accentBase'
+            iconClass='fill-accentBase group-hover:fill-whiteBase'
             sizes={{ width: IconSizes.SM, height: IconSizes.LG }}
-            classNameButton='flex w-full rounded-[10px] bg-whiteBase px-2.5 py-2 md:h-10 md:w-10 dark:bg-darkBase'
+            classNameButton='flex w-full group hover:bg-accentBase rounded-[10px] bg-whiteBase px-2.5 py-2 md:h-10 md:w-10 dark:bg-darkBase'
             type={ButtonType.Submit}
           />
         </div>

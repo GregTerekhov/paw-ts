@@ -37,6 +37,7 @@ export enum IconName {
   Dislike = 'dislike',
   Eye = 'eye',
   Favourite = 'favourite',
+  FilledHeart = 'filled-heart',
   Like = 'like',
   Logo = 'logo',
   NoImage = 'no-image',

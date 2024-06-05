@@ -2,12 +2,10 @@
 
 import { useState } from 'react';
 
-import { ButtonVariant, IconSizes } from 'types';
+import { ButtonVariant, IconName, IconSizes } from 'types';
 
 import { MobileMenu, Navigation } from '..';
 import { PrimaryButton } from 'ui';
-
-import burger from '../../public/burger.svg';
 
 export default function MenuControls() {
   const [isUploadMenu, setIsUploadMenu] = useState(false);
@@ -18,10 +16,10 @@ export default function MenuControls() {
         <PrimaryButton
           variant={ButtonVariant.Iconic}
           onHandleClick={() => setIsUploadMenu(true)}
-          iconSrc={burger}
-          iconAlt='Open mobile menu'
-          classNameButton='flex h-[60px] w-[60px] rounded-[20px] bg-whiteBase hover:bg-accentBase-light dark:bg-whiteBase/5'
+          iconSrc={IconName.Burger}
+          classNameButton='group flex h-[60px] w-[60px] rounded-[20px] bg-whiteBase hover:bg-accentBase dark:bg-whiteBase/5'
           sizes={{ width: IconSizes['5XL'], height: IconSizes.SM }}
+          iconClass='fill-accentBase group-hover:fill-whiteBase'
         />
       </div>
       {isUploadMenu && (
