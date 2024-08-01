@@ -2,7 +2,10 @@
 
 import { useParams, usePathname } from 'next/navigation';
 
-import { BreedsFiltering, GalleryFiltering, ReturnButton, UploadingMenuControls } from '..';
+import BreedsFiltering from '../breeds/breeds-filtering';
+import ReturnButton from './return-button';
+import GalleryFiltering from '../gallery/gallery-filtering';
+import UploadingMenuControls from '../gallery/uploading-menu-controls';
 
 export default function SectionHeading() {
   const pathname = usePathname();
@@ -30,10 +33,18 @@ export default function SectionHeading() {
           )}
           <div className='hidden md:block'>{pathname === '/breeds' && <BreedsFiltering />}</div>
         </div>
-        {pathname === '/gallery' && <UploadingMenuControls className='md:flex md:w-[143px]' />}
+        {pathname === '/gallery' && (
+          <UploadingMenuControls
+            menuId='uploading'
+            className='md:flex md:w-[143px]'
+          />
+        )}
       </div>
       {pathname === '/gallery' && (
-        <UploadingMenuControls className='mb-2.5 max-md:flex max-md:w-full' />
+        <UploadingMenuControls
+          menuId='uploading'
+          className='mb-2.5 max-md:flex max-md:w-full'
+        />
       )}
       <div className='hidden max-md:block'>{pathname === '/breeds' && <BreedsFiltering />}</div>
       {pathname === '/gallery' && <GalleryFiltering />}

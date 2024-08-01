@@ -1,4 +1,4 @@
-import { Container, Header, SectionTemplate } from 'components';
+import { Container, Header } from 'components';
 
 export default function NestedLayout({
   children,
@@ -8,7 +8,7 @@ export default function NestedLayout({
   return (
     <Container>
       <Header />
-      <SectionTemplate>{children}</SectionTemplate>
+      {children}
     </Container>
   );
 }

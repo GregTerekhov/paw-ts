@@ -1,65 +1,10 @@
-'use client';
-
-import { GridList } from 'components';
-import { gridItems } from 'helpers';
+import { SectionTemplate } from 'template';
+import { FavouritesStats } from 'components';
 
 export default function FavouritePage() {
   return (
-    <section>
-      <GridList listItems={gridItems} />
-      <ul className='space-y-2.5'>
-        <li className='rounded-[10px] bg-whiteBase-darker p-[15px] dark:bg-whiteBase/5'>
-          <div className='flex justify-between max-md:mb-2.5'>
-            <div className='flex items-center md:gap-x-5'>
-              <p className='w-[61px] rounded-[5px] bg-whiteBase py-[3px] text-center leading-6 dark:bg-darkBase'>
-                TIME
-              </p>
-              <p className='hidden leading-6 text-secondaryText md:block'>
-                Image ID: <span className='font-medium text-darkBase dark:text-whiteBase'>ID</span>{' '}
-                was added to ...
-              </p>
-            </div>
-          </div>
-          <p className='hidden leading-6 text-secondaryText max-md:block'>
-            Image ID: <span className='font-medium text-darkBase dark:text-whiteBase'>ID</span> was
-            added to ...
-          </p>
-        </li>
-        <li className='rounded-[10px] bg-whiteBase-darker p-[15px] dark:bg-whiteBase/5'>
-          <div className='flex justify-between max-md:mb-2.5'>
-            <div className='flex items-center md:gap-x-5'>
-              <p className='w-[61px] rounded-[5px] bg-whiteBase py-[3px] text-center leading-6 dark:bg-darkBase'>
-                TIME
-              </p>
-              <p className='hidden leading-6 text-secondaryText md:block'>
-                Image ID: <span className='font-medium text-darkBase dark:text-whiteBase'>ID</span>{' '}
-                was ... to Favourites
-              </p>
-            </div>
-          </div>
-          <p className='hidden leading-6 text-secondaryText max-md:block'>
-            Image ID: <span className='font-medium text-darkBase dark:text-whiteBase'>ID</span> was
-            ... to Favourites
-          </p>
-        </li>
-        <li className='rounded-[10px] bg-whiteBase-darker p-[15px] dark:bg-whiteBase/5'>
-          <div className='flex justify-between max-md:mb-2.5'>
-            <div className='flex items-center md:gap-x-5'>
-              <p className='w-[61px] rounded-[5px] bg-whiteBase py-[3px] text-center leading-6 dark:bg-darkBase'>
-                TIME
-              </p>
-              <p className='hidden leading-6 text-secondaryText md:block'>
-                Image ID: <span className='font-medium text-darkBase dark:text-whiteBase'>ID</span>{' '}
-                was ... to Favourites
-              </p>
-            </div>
-          </div>
-          <p className='hidden leading-6 text-secondaryText max-md:block'>
-            Image ID: <span className='font-medium text-darkBase dark:text-whiteBase'>ID</span> was
-            ... to Favourites
-          </p>
-        </li>
-      </ul>
-    </section>
+    <SectionTemplate sectionStyle='max-h-breedsDetailsSm md:max-h-breedsDetailsLg'>
+      <FavouritesStats />
+    </SectionTemplate>
   );
 }

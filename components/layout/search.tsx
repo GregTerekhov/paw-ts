@@ -1,12 +1,19 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { ButtonType, ButtonVariant, IconName, IconSizes } from 'types';
+import { ButtonType, ButtonVariant, IconName, IconSizes, Paths } from 'types';
 
 import { PrimaryButton } from 'ui';
 
 export default function SearchForm() {
   const [isHovered, setIsHovered] = useState(false);
+  const router = useRouter();
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    router.push(Paths.Search);
+  };
   return (
     <form>
       <label htmlFor='search'>
@@ -22,7 +29,7 @@ export default function SearchForm() {
       </label>
       <PrimaryButton
         variant={ButtonVariant.Iconic}
-        // onHandleClick={() => console.log('To Search page')}
+        onHandleClick={handleClick}
         type={ButtonType.Submit}
         iconSrc={IconName.Search}
         classNameButton='absolute group hover:bg-accentBase right-2.5 top-2.5 flex h-10 w-10 rounded-[10px] bg-accentBase-light dark:bg-accentBase/20'

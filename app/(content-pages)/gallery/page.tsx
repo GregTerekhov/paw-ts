@@ -1,14 +1,11 @@
-'use client';
-
-import { GridList } from 'components';
-import { gridItems } from 'helpers';
+import { SectionTemplate } from 'template';
 
 export default function GalleryPage() {
   return (
     <>
-      <section className='max-h-gallerySm overflow-x-auto md:max-h-galleryMd'>
-        <GridList listItems={gridItems} />
-      </section>
+      <SectionTemplate sectionStyle='max-h-gallerySm md:max-h-galleryMd'>
+        <p className='sr-only'>GalleryPage</p>
+      </SectionTemplate>
     </>
   );
 }

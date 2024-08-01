@@ -1,16 +1,24 @@
-import { GridList } from 'components';
-import { gridItems } from 'helpers';
+import { SectionTemplate } from 'template';
 
 export default function SearchPage() {
-  return (
-    <section>
+  const getBreedName = () => {
+    return (
       <p className='mb-5 text-secondaryText'>
         Search results for:{' '}
         <span className='font-medium capitalize text-darkBase md:text-medium dark:text-whiteBase'>
           name
         </span>
       </p>
-      <GridList listItems={gridItems} />
-    </section>
+    );
+  };
+
+  const foundName = getBreedName();
+  return (
+    <SectionTemplate
+      sectionStyle='max-h-breedsDetailsSm md:max-h-breedsDetailsLg'
+      additionalNode={foundName}
+    >
+      <p className='sr-only'>SearchPage</p>
+    </SectionTemplate>
   );
 }

@@ -1,6 +1,4 @@
-import Image from 'next/image';
-
-import { Container, WelcomeScreen } from 'components';
+import { Container, WelcomeScreen, WelcomeScreenImage } from 'components';
 
 export default function Home() {
   return (
@@ -10,16 +8,8 @@ export default function Home() {
           <WelcomeScreen />
         </div>
       </Container>
-      <div className='hidden overflow-hidden lg:block'>
-        <Image
-          src='/girl-and-pet.png'
-          alt='Girl and cat'
-          objectFit='contain'
-          priority
-          width={895}
-          height={1024}
-        />
-      </div>
+      <div className='my-[30px] mr-[30px] hidden h-screen max-h-modalUpload w-[680px] rounded-[20px] bg-accentBase-light lg:block dark:bg-whiteBase/5'></div>
+      <WelcomeScreenImage />
     </main>
   );
 }

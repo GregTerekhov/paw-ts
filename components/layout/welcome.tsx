@@ -1,4 +1,6 @@
-import { Logo, Navigation, ThemeSwitcher } from 'components';
+import Logo from '../logo';
+import Navigation from '../navigation';
+import ThemeSwitcher from '../theme-switcher';
 
 export default function WelcomeScreen() {
   return (

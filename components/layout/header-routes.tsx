@@ -3,45 +3,21 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { UrlObject } from 'url';
-import { IconName, IconSizes, PathLabel, Paths } from 'types';
+import { IconSizes } from 'types';
+import { getHeaderLinks } from 'data';
 
-import SvgIcon from 'ui/svg-icon';
-
-interface HeaderLinks {
-  path: UrlObject;
-  label: PathLabel;
-  iconSrc: IconName;
-  height?: IconSizes;
-}
+import { SvgIcon } from 'ui';
 
 export default function HeaderRoutes() {
   const pathname = usePathname();
 
-  const headerLinks: HeaderLinks[] = [
-    {
-      path: { pathname: Paths.Likes },
-      label: PathLabel.Likes,
-      iconSrc: IconName.Like,
-    },
-    {
-      path: { pathname: Paths.Favourites },
-      label: PathLabel.Favourites,
-      iconSrc: IconName.Favourite,
-      height: IconSizes['4XL'],
-    },
-    {
-      path: { pathname: Paths.Dislikes },
-      label: PathLabel.Dislikes,
-      iconSrc: IconName.Dislike,
-    },
-  ];
+  const headerLinks = getHeaderLinks();
 
   return (
     <ul className='flex gap-x-2.5'>
       {Array.isArray(headerLinks) &&
         headerLinks.map(({ path, label, iconSrc, height = IconSizes['5XL'] }) => {
-          const isActive = pathname === path.pathname;
+          const isActive = pathname === path;
 
           return (
             <li key={label}>

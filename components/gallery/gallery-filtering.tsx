@@ -1,27 +1,10 @@
 import { ButtonType, ButtonVariant, IconName, IconSizes } from 'types';
+import { getGalleryFilters } from 'data';
 
 import { PrimaryButton, SvgIcon } from 'ui';
 
-interface GalleryFilters {
-  label: string;
-  value: string;
-}
-
 export default function GalleryFiltering() {
-  const galleryFilters: GalleryFilters[] = [
-    {
-      label: 'Order',
-      value: 'Random',
-    },
-    {
-      label: 'Type',
-      value: 'Static',
-    },
-    {
-      label: 'Breed',
-      value: 'None',
-    },
-  ];
+  const galleryFilters = getGalleryFilters();
 
   return (
     <ul className='mb-2.5 rounded-[10px] bg-whiteBase-darker p-2.5 max-md:space-y-2.5 md:mb-5 md:grid md:grid-cols-2 md:grid-rows-2 md:gap-x-5 md:gap-y-2.5 md:pb-5 md:pt-2.5 dark:bg-whiteBase/5'>

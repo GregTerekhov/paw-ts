@@ -1,2 +1,3 @@
+export * from './cookiesHelpers';
 export * from './data';
-export * from './useTheme';
+export * from './themeHelpers';

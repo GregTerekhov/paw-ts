@@ -37,7 +37,10 @@
     "paths": {
       "app/*": ["app/*"],
       "components/*": ["components/*"],
+      "context/*": ["context/*"],
+      "data/*": ["data/*"],
       "helpers/*": ["helpers/*"],
+      "template/*": ["template/*"],
       "types/*": ["types/*"],
       "ui/*": ["ui/*"]
     }

@@ -1,12 +1,9 @@
-'use client';
-
-import { GridList } from 'components';
-import { gridItems } from 'helpers';
+import { SectionTemplate } from 'template';
 
 export default function BreedsPage() {
   return (
-    <section className='max-h-breedsSm overflow-auto md:max-h-breedsMd'>
-      <GridList listItems={gridItems} />
-    </section>
+    <SectionTemplate sectionStyle='max-h-breedsSm md:max-h-breedsMd'>
+      <p className='sr-only'>BreedsPage</p>
+    </SectionTemplate>
   );
 }

@@ -1,23 +1,10 @@
 import { ButtonType, ButtonVariant, IconName, IconSizes } from 'types';
+import { getSortButton } from 'data';
 
 import { PrimaryButton, SvgIcon } from 'ui';
 
-interface ISortButtons {
-  id: string;
-  iconSrc: IconName;
-}
-
 export default function BreedsFiltering() {
-  const sortButton: ISortButtons[] = [
-    {
-      id: 'asc',
-      iconSrc: IconName.Ascending,
-    },
-    {
-      id: 'desc',
-      iconSrc: IconName.Descending,
-    },
-  ];
+  const sortButton = getSortButton();
 
   return (
     <div className='max-md:mb-2.5 max-md:space-y-2.5 md:flex md:flex-1 md:gap-x-2.5'>

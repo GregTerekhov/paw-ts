@@ -1,10 +1,9 @@
-import { GridList } from 'components';
-import { gridItems } from 'helpers';
+import { SectionTemplate } from 'template';
 
 export default function LikesPage() {
   return (
-    <section>
-      <GridList listItems={gridItems} />
-    </section>
+    <SectionTemplate sectionStyle='max-h-breedsDetailsSm md:max-h-breedsDetailsLg'>
+      <p className='sr-only'>LikesPage</p>
+    </SectionTemplate>
   );
 }

@@ -73,6 +73,8 @@ const config: Config = {
         tablet: 'calc(100vh - 130px)',
         desktop: 'calc(100vh - 138px)',
         votingSm: 'calc(100vh - 490px)',
+        breedsDetailsSm: 'calc(100vh - 280px)',
+        breedsDetailsLg: 'calc(100vh - 210px)',
         breedsSm: 'calc(100vh - 370px)',
         gallerySm: 'calc(100vh - 662px)',
         votingMd: 'calc(100vh - 690px)',
